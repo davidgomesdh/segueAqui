@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1008058189612",
+    "firebase_url": "https://segueaqui-c8972.firebaseio.com",
+    "project_id": "segueaqui-c8972",
+    "storage_bucket": "segueaqui-c8972.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008058189612:android:942df7f1504d0ab1",
+        "android_client_info": {
+          "package_name": "com.example.davidsantos.segueaqui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008058189612-461c2pnldrv61p4jmp1rmuj7mbh0rgef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.davidsantos.segueaqui",
+            "certificate_hash": "39f08630c54d53b6ee3d6ede070f395dbdfe6879"
+          }
+        },
+        {
+          "client_id": "1008058189612-6441emvk2mk6c9o0kotasf2pa4unc5lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjggwsBTthBFRuPu_jYLEUyjqloJIASXs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008058189612-6441emvk2mk6c9o0kotasf2pa4unc5lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
