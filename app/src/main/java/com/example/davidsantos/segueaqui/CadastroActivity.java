@@ -15,6 +15,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -38,8 +44,8 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     public void salvar(View view){
-        String usuario = editUsuario.getText().toString().trim();
-        String email = editEmail.getText().toString().trim();
+        final String usuario = editUsuario.getText().toString().trim();
+        final String email = editEmail.getText().toString().trim();
         String senha = editSenha.getText().toString().trim();
         if(usuario.equals("")){
             editUsuario.setError("Preencha este campo");
@@ -62,7 +68,19 @@ public class CadastroActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(CadastroActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference userRef = database.getReference("users/"+user.getUid());
+
+                            Map<String, Object> userInfos = new HashMap<>();
+                            userInfos.put("usuario",usuario);
+                            userInfos.put("email",email);
+
+                            userRef.setValue(userInfos);
+                            finish();
+
                         }else{
                             try {
                                 throw task.getException();
