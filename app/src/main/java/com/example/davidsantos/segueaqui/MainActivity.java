@@ -229,6 +229,11 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }
+        if(id==R.id.suggest){
+            Intent i = new Intent(MainActivity.this, SuggestActivity.class);
+            i.putExtra("uid", uid);
+            startActivity(i);
+        }
         return true;
     }
 }

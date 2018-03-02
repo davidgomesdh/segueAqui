@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SeguirActivity"></activity>
+        <activity android:name=".SeguirActivity" />
+        <activity android:name=".SuggestActivity"></activity>
     </application>
 
 </manifest>
